@@ -122,11 +122,9 @@ app.delete('/api/productos/:id', (req, res) => {
 
     const productoEliminado = productos.splice(indice, 1);
 
-    res.json({
-        mensaje: "Producto eliminado correctamente",
-        producto: productoEliminado[0]
+    return res.status(204).send();
     });
-});
+
 
 // Iniciar servidor
 app.listen(PORT, () => {
